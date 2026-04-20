@@ -1,4 +1,3 @@
-// Senhas
 const PASS_1 = "241225";
 const PASS_2 = "Bruna";
 
@@ -7,7 +6,8 @@ function checkPass1() {
     if(input === PASS_1) {
         document.getElementById('login-screen').classList.remove('active');
         document.getElementById('main-content').classList.add('active');
-        document.getElementById('bgMusic').play(); // Inicia a música
+        const audio = document.getElementById('bgMusic');
+        audio.play().catch(e => console.log("Áudio precisa de interação direta"));
         startHearts();
     } else {
         alert("Senha incorreta, tente novamente!");
@@ -25,12 +25,12 @@ function askPass2() {
     }
 }
 
-// Contador Regressivo (Amanhã 19:30)
 const targetDate = new Date("April 21, 2026 19:30:00").getTime();
 
 setInterval(() => {
     const now = new Date().getTime();
     const diff = targetDate - now;
+    if (diff < 0) return;
 
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -41,7 +41,6 @@ setInterval(() => {
     document.getElementById('seconds').innerText = seconds;
 }, 1000);
 
-// Chuva de Corações
 function startHearts() {
     const container = document.getElementById('heart-container');
     setInterval(() => {
@@ -49,8 +48,9 @@ function startHearts() {
         heart.classList.add('heart');
         heart.innerHTML = '❤️';
         heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+        heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+        heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
         container.appendChild(heart);
         setTimeout(() => heart.remove(), 5000);
-    }, 300);
+    }, 400);
 }
