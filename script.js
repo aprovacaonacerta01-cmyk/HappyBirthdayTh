@@ -6,8 +6,7 @@ function checkPass1() {
     if(input === PASS_1) {
         document.getElementById('login-screen').classList.remove('active');
         document.getElementById('main-content').classList.add('active');
-        const audio = document.getElementById('bgMusic');
-        audio.play().catch(e => console.log("Áudio aguardando clique"));
+        document.getElementById('bgMusic').play();
         startHearts();
     } else {
         alert("Senha incorreta!");
@@ -39,14 +38,14 @@ setInterval(() => {
 }, 1000);
 
 function startHearts() {
-    const container = document.body;
+    const container = document.getElementById('heart-container');
     setInterval(() => {
         const heart = document.createElement('div');
         heart.classList.add('heart');
         heart.innerHTML = '❤️';
         heart.style.left = Math.random() * 100 + 'vw';
         heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-        document.body.appendChild(heart);
+        container.appendChild(heart);
         setTimeout(() => heart.remove(), 5000);
-    }, 400);
+    }, 300);
 }
