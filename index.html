@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Thiago</title>
+    <title>Feliz Aniversário, Thiago!</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="heart-container" id="heart-container"></div>
 
     <audio id="bgMusic" loop>
-        <source src="musica.wma" type="audio/x-ms-wma">
-        Seu navegador não suporta áudio.
+        <source src="musica.mp3" type="audio/mpeg">
     </audio>
 
     <section id="login-screen" class="active">
         <div class="glass-card">
-            <h1>Happy Birthday Thiago</h1>
-            <p>Insira a chave do seu coração: (DICA: é o dia mais importante para nós)</p>
+            <h1 class="happy-bday-title">Happy Birthday Thiago</h1>
+            <p class="intro-text">"Hoje é um dia muito especial e por isso resolvi me aventurar um pouquinho na sua área, só para te lembrar o quanto você é importante para mim, esse site é só uma tentativa de entrar no seu universo e dizer o quanto admiro tudo o que você faz! Confesso que precisei de ajuda para chegar aqui mas a intenção é toda minha: te desejar o aniversário mais feliz do mundo!"</p>
+            <p>Insira a senha especial:</p>
             <input type="password" id="pass1" placeholder="******">
             <button onclick="checkPass1()">Entrar</button>
         </div>
@@ -27,19 +27,73 @@
 
     <section id="main-content">
         <div class="hero">
+            <div class="message-box">
+                <p class="highlight-text">Parabéns, você acertou a senha!</p>
+                <p>Se lembra bem do dia mágico em que com uma caça ao tesouro você me pediu em namoro!</p>
+            </div>
+
             <img src="casal.jpg" alt="Casal" class="couple-photo">
-            <h2 class="romantic-text">"Hoje é o dia da pessoa mais importante da minha vida! O aniversário é seu, mas o presente é meu de tê-lo em minha vida!"</h2>
             
+            <h2 class="romantic-title">"Hoje é o dia da pessoa mais importante da minha vida! O aniversário é seu, mas o presente é meu de tê-lo em minha vida!"</h2>
+
+            <div class="timeline">
+                <h3 class="section-title">Nossa História</h3>
+                <div class="timeline-item">
+                    <img src="imagem1.jpg" alt="Nos conhecemos">
+                    <p>O dia que nos conhecemos</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="imagem2.jpg" alt="Primeira conversa">
+                    <p>Nossa primeira conversa</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="imagem3.jpg" alt="Primeiro eu te amo">
+                    <p>Nosso primeiro 'eu te amo'</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="imagem4.jpg" alt="Primeiro beijo">
+                    <p>Nosso primeiro beijo</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="imagem5.jpg" alt="Hoje">
+                    <p>Hoje, amanhã e uma vida inteira ao seu lado</p>
+                </div>
+            </div>
+
+            <div class="reasons-box">
+                <h3 class="section-title">10 Coisas que eu amo em você</h3>
+                <ul class="reasons-list">
+                    <li>1. O jeito que você me olha e me faz sentir segura.</li>
+                    <li>2. Sua determinação em ser um homem melhor a cada dia.</li>
+                    <li>3. Como você trata a sua família e a minha com tanto carinho.</li>
+                    <li>4. O seu sorriso, que ilumina até os meus dias mais cinzentos.</li>
+                    <li>5. A paz que você transmite só de estar por perto.</li>
+                    <li>6. Sua paciência e o modo como você me ouve.</li>
+                    <li>7. O som da sua risada, que é minha música favorita.</li>
+                    <li>8. Como você se tornou meu melhor amigo e parceiro.</li>
+                    <li>9. A forma como você me incentiva a crescer.</li>
+                    <li>10. O fato de que, com você, eu sou a minha melhor versão.</li>
+                </ul>
+            </div>
+
+            <div class="deep-message">
+                <p>Hoje é o dia da pessoa que faz meus dias mais leves, mais felizes e muito mais especiais.</p>
+                <p>Sou muito grata por ter você ao meu lado, pelo seu carinho, pela sua companhia e por tudo o que a gente constrói juntos todos os dias. Você é alguém que me faz sorrir com facilidade, e me lembra o quanto é bom amar e ser amada. E mesmo você me perturbando às vezes, eu amo esse seu jeitinho porque é parte do que faz você ser exatamente quem eu amo.</p>
+                <p>Peço a Deus que continue abençoando sua vida, iluminando seus caminhos, realizando seus sonhos e te protegendo sempre. Que esse novo ciclo seja cheio de paz, conquistas e muitas alegrias e que Ele continue guiando nossos passos juntos.</p>
+                <p class="signature">Parabéns pelo seu dia! Eu te amo muito.</p>
+            </div>
+
             <div class="countdown-container">
-                <h3>Nosso jantar em:</h3>
+                <h3>Nosso jantar especial em:</h3>
                 <div id="timer">
-                    <div><span id="hours">00</span><small>Horas</small></div>
-                    <div><span id="minutes">00</span><small>Minutos</small></div>
-                    <div><span id="seconds">00</span><small>Segundos</small></div>
+                    <div><span id="hours">00</span><small>Hs</small></div>
+                    <div><span id="minutes">00</span><small>Min</small></div>
+                    <div><span id="seconds">00</span><small>Seg</small></div>
                 </div>
             </div>
 
             <div class="reveal-box">
+                <p class="final-phrase">"Seu aniversário nunca seria um dia qualquer, pois uma pessoa especial como você merece ser celebrada todos os dias."</p>
                 <p>Reservei um lugar superlegal para jantar com sua mãe, seu pai e minha mãe.</p>
                 <button id="btnReveal" onclick="askPass2()">Revelar Localização</button>
             </div>
