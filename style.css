@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+/* LOGIN */
+#login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#000, #8b0000);
+}
+
+.box {
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg,#8b0000,#000);
+}
+
+/* FOTO */
+.foto img {
+  width: 300px;
+  border-radius: 20px;
+  margin: 40px 0;
+}
+
+/* CONTADOR */
+#timer {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+/* ANIMAÇÃO */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CORAÇÕES */
+.hearts span {
+  position: absolute;
+  color: #ff4d6d;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {transform: translateY(-10%);}
+  100% {transform: translateY(110vh);}
+}
