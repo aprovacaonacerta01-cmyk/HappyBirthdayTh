@@ -1,70 +1,56 @@
-document.addEventListener("DOMContentLoaded", function(){
+// Senhas
+const PASS_1 = "241225";
+const PASS_2 = "Bruna";
 
-// SENHA 1
-document.getElementById("btnSenha").addEventListener("click", function(){
-  const senha = document.getElementById("senha").value;
-
-  if(senha === "241225"){
-    document.getElementById("login").style.display = "none";
-    document.getElementById("site").style.display = "block";
-    document.getElementById("musica").play();
-  } else {
-    alert("Senha incorreta 😢");
-  }
-});
-
-// SENHA 2
-document.getElementById("btnSenha2").addEventListener("click", function(){
-  const senha2 = document.getElementById("senha2").value;
-
-  if(senha2 === "Bruna"){
-    document.getElementById("detalhes").style.display = "block";
-  } else {
-    alert("Senha incorreta 😢");
-  }
-});
-
-// CONTADOR
-function atualizarContador(){
-  const agora = new Date();
-  const amanha = new Date();
-
-  amanha.setDate(agora.getDate()+1);
-  amanha.setHours(19,30,0);
-
-  const diff = amanha - agora;
-
-  const h = Math.floor(diff/1000/60/60);
-  const m = Math.floor(diff/1000/60)%60;
-  const s = Math.floor(diff/1000)%60;
-
-  document.getElementById("timer").innerHTML = `${h}h ${m}m ${s}s`;
-}
-
-setInterval(atualizarContador,1000);
-
-// ANIMAÇÃO
-const fades = document.querySelectorAll(".fade");
-
-window.addEventListener("scroll", ()=>{
-  fades.forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight-100){
-      el.classList.add("show");
+function checkPass1() {
+    const input = document.getElementById('pass1').value;
+    if(input === PASS_1) {
+        document.getElementById('login-screen').classList.remove('active');
+        document.getElementById('main-content').classList.add('active');
+        document.getElementById('bgMusic').play(); // Inicia a música
+        startHearts();
+    } else {
+        alert("Senha incorreta, tente novamente!");
     }
-  });
-});
-
-// CORAÇÕES
-function criarCoracao(){
-  const heart = document.createElement("span");
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random()*100+"vw";
-
-  document.querySelector(".hearts").appendChild(heart);
-
-  setTimeout(()=>heart.remove(),5000);
 }
 
-setInterval(criarCoracao,300);
+function askPass2() {
+    const input = prompt("Qual o nome da mulher da sua vida?");
+    if(input && input.toLowerCase() === PASS_2.toLowerCase()) {
+        document.getElementById('secret-details').classList.remove('hidden');
+        document.getElementById('btnReveal').style.display = 'none';
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    } else {
+        alert("Senha incorreta!");
+    }
+}
 
-});
+// Contador Regressivo (Amanhã 19:30)
+const targetDate = new Date("April 21, 2026 19:30:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').innerText = minutes;
+    document.getElementById('seconds').innerText = seconds;
+}, 1000);
+
+// Chuva de Corações
+function startHearts() {
+    const container = document.getElementById('heart-container');
+    setInterval(() => {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+        container.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+    }, 300);
+}
