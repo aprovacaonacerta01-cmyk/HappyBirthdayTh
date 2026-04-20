@@ -1,66 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surpresa ❤️</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Thiago</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- LOGIN DECORADO -->
-<div id="login">
-  <div class="decoracao">
-    <h1>🎉 Happy Birthday Thiago 🎉</h1>
-    <p>Uma surpresa especial te espera 💖 (DICA: a senha  é a data mais importante para nós)</p>
+    <div class="heart-container" id="heart-container"></div>
 
-    <input type="password" id="senha" placeholder="Digite a senha">
-    <button id="btnSenha">Entrar</button>
-  </div>
-</div>
+    <audio id="bgMusic" loop>
+        <source src="musica.wma" type="audio/x-ms-wma">
+        Seu navegador não suporta áudio.
+    </audio>
 
-<!-- SITE -->
-<div id="site" style="display:none">
+    <section id="login-screen" class="active">
+        <div class="glass-card">
+            <h1>Happy Birthday Thiago</h1>
+            <p>Insira a chave do seu coração: (DICA: é o dia mais importante para nós)</p>
+            <input type="password" id="pass1" placeholder="******">
+            <button onclick="checkPass1()">Entrar</button>
+        </div>
+    </section>
 
-<audio id="musica" loop>
-  <source src="music/musica.mp3" type="audio/mp3">
-</audio>
+    <section id="main-content">
+        <div class="hero">
+            <img src="casal.jpg" alt="Casal" class="couple-photo">
+            <h2 class="romantic-text">"Hoje é o dia da pessoa mais importante da minha vida! O aniversário é seu, mas o presente é meu de tê-lo em minha vida!"</h2>
+            
+            <div class="countdown-container">
+                <h3>Nosso jantar em:</h3>
+                <div id="timer">
+                    <div><span id="hours">00</span><small>Horas</small></div>
+                    <div><span id="minutes">00</span><small>Minutos</small></div>
+                    <div><span id="seconds">00</span><small>Segundos</small></div>
+                </div>
+            </div>
 
-<section class="hero">
-  <h1>Hoje é o dia da pessoa mais importante da minha vida ❤️</h1>
-  <p>O aniversário é seu, mas o presente é meu de tê-lo em minha vida!</p>
-</section>
+            <div class="reveal-box">
+                <p>Reservei um lugar superlegal para jantar com sua mãe, seu pai e minha mãe.</p>
+                <button id="btnReveal" onclick="askPass2()">Revelar Localização</button>
+            </div>
 
-<section class="foto fade">
-  <img src="img/casal.jpg">
-</section>
+            <div id="secret-details" class="hidden">
+                <div class="info-card">
+                    <p><strong>📍 Local de encontro:</strong> Minha Casa</p>
+                    <p><strong>⏰ Horário:</strong> 19h30</p>
+                    <p class="obs">⚠️ Venha de vermelho para a gente estar combinando!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="contador fade">
-  <h2>Contagem para nosso momento 💕</h2>
-  <div id="timer"></div>
-</section>
-
-<section class="conteudo fade">
-  <p>Reservei um lugar superlegal para jantar com sua mãe, seu pai e minha mãe 💖</p>
-</section>
-
-<section class="senha2 fade">
-  <h3>Digite a senha para ver os detalhes 🔐 (DICA: é a pessoa que você mais ama)</h3>
-  <input type="text" id="senha2">
-  <button id="btnSenha2">Desbloquear</button>
-</section>
-
-<section id="detalhes" style="display:none" class="fade">
-  <h2>Detalhes do Encontro</h2>
-  <p>📍 Local: Minha Casa</p>
-  <p>⏰ Horário: 19h30</p>
-  <p>❤️ Venha de vermelho para combinarmos!</p>
-</section>
-
-<div class="hearts"></div>
-
-</div>
-
-<script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
