@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surpresa ❤️</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- SENHA INICIAL -->
+<div id="login">
+  <div class="box">
+    <h2>Digite a senha 💖</h2>
+    <input type="password" id="senha" placeholder="Senha">
+    <button onclick="verificarSenha()">Entrar</button>
+  </div>
+</div>
+
+<!-- SITE -->
+<div id="site" style="display:none">
+
+<audio id="musica" loop>
+  <source src="music/musica.mp3" type="audio/mp3">
+</audio>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Hoje é o dia da pessoa mais importante da minha vida ❤️</h1>
+    <p>O aniversário é seu, mas o presente é meu de tê-lo em minha vida!</p>
+  </div>
+</section>
+
+<!-- FOTO -->
+<section class="foto fade">
+  <img src="img/casal.jpg" alt="Casal">
+</section>
+
+<!-- CONTADOR -->
+<section class="contador fade">
+  <h2>Contagem para nosso momento 💕</h2>
+  <div id="timer"></div>
+</section>
+
+<!-- TEXTO -->
+<section class="conteudo fade">
+  <p>Reservei um lugar superlegal para jantar com sua mãe, seu pai e minha mãe 💖</p>
+</section>
+
+<!-- SEGUNDA SENHA -->
+<section class="senha2 fade">
+  <h3>Digite a senha para ver os detalhes 🔐</h3>
+  <input type="text" id="senha2">
+  <button onclick="verificarSenha2()">Desbloquear</button>
+</section>
+
+<!-- DETALHES -->
+<section id="detalhes" style="display:none" class="fade">
+  <h2>Detalhes do Encontro</h2>
+  <p>📍 Local: Minha Casa</p>
+  <p>⏰ Horário: 19h30</p>
+  <p>❤️ Observação: Venha de vermelho para combinarmos!</p>
+</section>
+
+<div class="hearts"></div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
