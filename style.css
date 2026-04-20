@@ -17,56 +17,54 @@ body {
     background: var(--glass);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 30px;
+    padding: 40px 20px;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    max-width: 350px;
-    margin: 40px auto;
+    max-width: 400px;
+    margin: 50px auto;
 }
 
-.glass-card.wide { max-width: 600px; width: 90%; }
+.glass-card.wide { max-width: 600px; margin: 20px auto; }
 
-.intro-text { font-size: 0.9rem; font-style: italic; margin-bottom: 25px; line-height: 1.5; color: #eee; }
-.gold-title { font-family: 'Dancing Script', cursive; color: var(--gold); font-size: 2.2rem; }
+.intro-text { font-size: 0.85rem; font-style: italic; margin-bottom: 20px; color: #ddd; }
+.gold-title { font-family: 'Dancing Script', cursive; color: var(--gold); font-size: 2rem; }
 
 .couple-photo {
-    width: 200px; height: 200px;
+    width: 250px; height: 250px;
     border-radius: 50%;
-    border: 4px solid var(--gold);
+    border: 5px solid var(--gold);
     object-fit: cover;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
-.romantic-text { font-family: 'Dancing Script', cursive; font-size: 2rem; color: var(--gold); padding: 0 15px; }
+.romantic-text { font-family: 'Dancing Script', cursive; font-size: 2rem; color: var(--gold); padding: 0 20px; }
 
+/* Timeline Estilo Antigo */
 .timeline-item { margin: 40px 0; }
 .timeline-item img { width: 85%; max-width: 450px; border-radius: 10px; border: 1px solid var(--gold); }
 
-.reasons-list { text-align: left; list-style: none; padding: 0 25px; }
-.reasons-list li { margin: 12px 0; font-size: 1rem; line-height: 1.4; }
+.reasons-list { text-align: left; list-style: none; padding: 0 20px; }
+.reasons-list li { margin: 10px 0; font-size: 0.95rem; }
 
-.emotional-text { text-align: justify; line-height: 1.7; font-size: 1rem; padding: 30px; }
+.emotional-text { text-align: justify; line-height: 1.6; font-size: 0.95rem; }
 
-#timer { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
-#timer div { background: rgba(0,0,0,0.4); padding: 12px; border-radius: 10px; min-width: 65px; }
-#timer span { font-size: 1.4rem; display: block; color: var(--gold); font-weight: bold; }
+#timer { display: flex; justify-content: center; gap: 20px; margin: 30px 0; }
+#timer div { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; min-width: 70px; }
+#timer span { font-size: 1.5rem; display: block; color: var(--gold); }
 
-input { padding: 12px; border-radius: 10px; border: none; width: 80%; margin-bottom: 20px; text-align: center; background: white; }
+input { padding: 12px; border-radius: 10px; border: none; width: 80%; margin-bottom: 20px; text-align: center; }
 button {
     background: var(--primary); color: white; border: none;
-    padding: 14px 35px; border-radius: 25px; cursor: pointer;
-    font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+    padding: 12px 30px; border-radius: 25px; cursor: pointer;
+    font-weight: bold; transition: 0.3s;
 }
+button:hover { transform: scale(1.05); background: #ff0000; }
 
-.heart { position: absolute; color: var(--primary); animation: fall linear infinite; pointer-events: none; }
+.heart-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999; }
+.heart { position: absolute; color: var(--primary); animation: fall linear infinite; }
 @keyframes fall { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
 
 section { display: none; }
 section.active { display: block; animation: fadeIn 1.5s; }
 .hidden { display: none; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-@media (max-width: 600px) {
-    .romantic-text { font-size: 1.6rem; }
-    .gold-title { font-size: 1.8rem; }
-}
