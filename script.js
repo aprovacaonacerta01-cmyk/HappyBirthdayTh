@@ -6,11 +6,10 @@ function checkPass1() {
     if(input === PASS_1) {
         document.getElementById('login-screen').classList.remove('active');
         document.getElementById('main-content').classList.add('active');
-        const audio = document.getElementById('bgMusic');
-        audio.play().catch(e => console.log("Áudio precisa de interação direta"));
+        document.getElementById('bgMusic').play();
         startHearts();
     } else {
-        alert("Senha incorreta, tente novamente!");
+        alert("Senha incorreta!");
     }
 }
 
@@ -25,20 +24,17 @@ function askPass2() {
     }
 }
 
+// Contador para Amanhã às 19:30
 const targetDate = new Date("April 21, 2026 19:30:00").getTime();
 
 setInterval(() => {
     const now = new Date().getTime();
     const diff = targetDate - now;
-    if (diff < 0) return;
+    if (diff <= 0) return;
 
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    document.getElementById('hours').innerText = hours;
-    document.getElementById('minutes').innerText = minutes;
-    document.getElementById('seconds').innerText = seconds;
+    document.getElementById('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById('minutes').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById('seconds').innerText = Math.floor((diff % (1000 * 60)) / 1000);
 }, 1000);
 
 function startHearts() {
@@ -48,9 +44,8 @@ function startHearts() {
         heart.classList.add('heart');
         heart.innerHTML = '❤️';
         heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
-        heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        heart.style.animationDuration = Math.random() * 3 + 2 + 's';
         container.appendChild(heart);
         setTimeout(() => heart.remove(), 5000);
-    }, 400);
+    }, 300);
 }
