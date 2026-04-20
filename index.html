@@ -8,12 +8,14 @@
 </head>
 <body>
 
-<!-- SENHA INICIAL -->
+<!-- LOGIN DECORADO -->
 <div id="login">
-  <div class="box">
-    <h2>Digite a senha 💖</h2>
-    <input type="password" id="senha" placeholder="Senha">
-    <button onclick="verificarSenha()">Entrar</button>
+  <div class="decoracao">
+    <h1>🎉 Happy Birthday Thiago 🎉</h1>
+    <p>Uma surpresa especial te espera 💖 (DICA: a senha  é a data mais importante para nós)</p>
+
+    <input type="password" id="senha" placeholder="Digite a senha">
+    <button id="btnSenha">Entrar</button>
   </div>
 </div>
 
@@ -21,45 +23,38 @@
 <div id="site" style="display:none">
 
 <audio id="musica" loop>
-  <source src="music/musica.wma" type="audio/x-ms-wma">
+  <source src="music/musica.mp3" type="audio/mp3">
 </audio>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Hoje é o dia da pessoa mais importante da minha vida ❤️</h1>
-    <p>O aniversário é seu, mas o presente é meu de tê-lo em minha vida!</p>
-  </div>
+  <h1>Hoje é o dia da pessoa mais importante da minha vida ❤️</h1>
+  <p>O aniversário é seu, mas o presente é meu de tê-lo em minha vida!</p>
 </section>
 
-<!-- FOTO -->
 <section class="foto fade">
-  <img src="img/casal.jpg" alt="Casal">
+  <img src="img/casal.jpg">
 </section>
 
-<!-- CONTADOR -->
 <section class="contador fade">
   <h2>Contagem para nosso momento 💕</h2>
   <div id="timer"></div>
 </section>
 
-<!-- TEXTO -->
 <section class="conteudo fade">
   <p>Reservei um lugar superlegal para jantar com sua mãe, seu pai e minha mãe 💖</p>
 </section>
 
-<!-- SEGUNDA SENHA -->
 <section class="senha2 fade">
-  <h3>Digite a senha para ver os detalhes 🔐</h3>
+  <h3>Digite a senha para ver os detalhes 🔐 (DICA: é a pessoa que você mais ama)</h3>
   <input type="text" id="senha2">
-  <button onclick="verificarSenha2()">Desbloquear</button>
+  <button id="btnSenha2">Desbloquear</button>
 </section>
 
-<!-- DETALHES -->
 <section id="detalhes" style="display:none" class="fade">
   <h2>Detalhes do Encontro</h2>
   <p>📍 Local: Minha Casa</p>
   <p>⏰ Horário: 19h30</p>
-  <p>❤️ Observação: Venha de vermelho para combinarmos!</p>
+  <p>❤️ Venha de vermelho para combinarmos!</p>
 </section>
 
 <div class="hearts"></div>
